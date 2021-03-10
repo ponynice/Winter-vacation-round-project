@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <title>用户登录页面</title>
+    <script src="vue.min.js"></script>
+    <link rel="stylesheet"href="htmlpage.css"/>
+</head>
+<body>
+    <div id="container">
+        <h2>用户登录</h2>
+        <form>
+            <table>
+                <tr>
+                    <td>用户名：</td>
+                    <td><input type="text" id="name" placeholder="请输入用户名" v-model="username"/></td>
+                </tr>
+                <tr>
+                    <td>密码：</td>
+                    <td>
+                        <input type="text" maxlength="16" id="secret" placeholder="请输入8~16位的密码" v-show="showPwd" v-model="pwd" />
+                        <input type="password" maxlength="16" id="secret" placeholder="请输入8~16位的密码" v-show="!showPwd" v-model="pwd" />
+                        <div v-on:click="showPwd=!showPwd">
+                            <span v-show="showPwd"><img id="first" src="睁眼.png" /></span>
+                            <span v-show="!showPwd"><img id="first" src="闭眼.png" /></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><button id="btn" class="button blue" v-on:click.stop="Finish">登录</button></td>
+                </tr>
+                <tr class="skip">
+                    <td class="left"><a href="file:///C:/Users/24427/source/repos/%E5%AF%92%E5%81%87%E8%BD%AE%E9%A1%B9%E7%9B%AE/%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E9%A1%B5%E9%9D%A2/login.html">用户注册</a></td>
+                    
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script src="JavaScript.js"></script>
+</body>
+</html>
